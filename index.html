@@ -111,7 +111,52 @@
 
     <br/>
     <hr />
+    <br />
+   
+    <center>
+        <h3> Convert .ssc timing points to .osu timing points </h3>
+    </center>
 
+    <h4> Description: </h4>
+    <p>
+        This tool converts a block of .ssc text containing #OFFSET, #BPMS and #SCROLLS, 
+	    and converts it to timing points, inherited and uninherited. For best results,
+	    use the osu editor to find the BPM to normalize to as well as the offset to 
+        adjust by first, paste those in to the respecitve forms, and then use the editor
+	    to adjust your notes by that offset.
+    </p>
+
+    <center>
+        <table>
+            <tr>
+                <td> BPM to normalize to: </td>
+                <td>
+                    <input type="text" id="sscbpmnorm" value="120">
+                </td>
+            </tr>
+            <tr>
+               <td> Offset to adjust by (ms): </td>
+               <td> <input type="text" id="sscoffset" value="0"></td>
+            </tr>  
+        </table>
+    </center>
+
+    <form id="sscbp">
+        <center>
+            <p> Place the contents between #OFFSET and the end of #SCROLLS here. </p>
+            <textarea id="sscin" rows="10" cols="80" form="sscbp"></textarea>
+            <p> Results will be contained here. Paste these into [TimingPoints]. </p>
+            <textarea id="sscout" rows="10" cols="80" form="sscbp"></textarea>
+            <br />
+
+            <input type="button" value="Calculate">
+            <input type="button" value="Remove SV Changes">
+        </center>
+    </form>
+
+    <br/>
+    <hr />
+    
     <h3>
         <strong>Create flowing speedups and slowdowns</strong>
     </h3>
